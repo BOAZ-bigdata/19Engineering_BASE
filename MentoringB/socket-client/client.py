@@ -17,9 +17,7 @@ def sigint_handler(signo, frame):
 
 signal.signal(signal.SIGINT, sigint_handler)
 
-
 while True :
-
 	message = input()
 
 	if message == 'quit': 
