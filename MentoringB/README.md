@@ -1,6 +1,6 @@
 ```bash
 # build docker image
-git clone -b week_5 --single-branch https://github.com/BOAZ-bigdata/19Engineering_BASE
+git clone -b week_7 --single-branch https://github.com/BOAZ-bigdata/19Engineering_BASE
 ```
 
 ```bash
