@@ -1,0 +1,36 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: efk-source
+  namespace: source
+spec:
+  selector:
+    app: efk-source
+  ports:
+  - name: http
+    protocol: TCP
+    port: 8088
+    targetPort: 8080
+  type: LoadBalancer
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: efk-source
+  namespace: source
+spec:
+  selector:
+    matchLabels:
+      app: efk-source
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: efk-source
+    spec:
+      containers:
+      - name: efk-source
+        image: ryann3/boaz19-efk-source:0.2
+        ports:
+        - containerPort: 8080

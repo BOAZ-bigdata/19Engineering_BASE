@@ -4,6 +4,8 @@ git clone -b week_7 --single-branch https://github.com/BOAZ-bigdata/19Engineerin
 ```
 
 ```bash
-# run docker container
-docker run -t -p 5000:5000 --name { container_name } --rm { image_name }
+# upload docker container
+docker build -t boaz19-efk-source:{{ tag }}
+docker tag boaz19-efk-source:{{ tag }} {{ docker username }}/boaz19-efk-source:{{ tag }}
+sudo docker push {{ docker username }}/boaz19-efk-source:{{ tag }}
 ```
